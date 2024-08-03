@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Survey form</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Survey Form</title>
   </head>
   <body>
     <header>
-    <h1 id="title">User Survey</h1>
-    <p id="description">Kindly fill in the following survey, so that we can improve our services</p>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Please give us your feedback about our service</p>
     </header>
     <main>
-      <form id="survey-form">
-        <fieldset>
-          <legend>Please enter your basic information below</legend>
-        <label id="name-label" for="name">Name: <input type="text" id="name" name="name" placeholder="Enter your name" required></label>
-        <label id="email-label" for="email">Email: <input type="email" id="email" name="email" placeholder="Enter your email" required></label>
-        <label id="phone-label" for="phone">Phone: <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]" max="15"></label>
-        <label id="number-label" for="number">Age: <input type="number" id="number" name="age" min="18" max="90" pattern="[0-9]" placeholder="Enter your age"></label>
+      <form id="survey-form" method="put" action="#">
+      <fieldset>
+        <legend>Please enter your basic information</legend>
+      <label id="name-label" for="name">Name: </label>
+        <input id="name" required type="text" name="name" placeholder="Enter your name">
+        <label id="email-label" for="email">Email: </label>
+        <input id="email" type="email" name="email" required placeholder="Enter your email">
+         <label id="number-label" for="number">Age: </label>
+        <input id="number" type="number" name="age" pattern="0-9" min="18" max="100" placeholder="Enter your age">
         </fieldset>
         <fieldset>
-          <legend>How did you here about us?</legend>
+          <legend>How did you hear about us?</legend>
           <select id="dropdown">
-            <option value="" disabled selected>Choose one</option>
-            <option value="1">Social Media</option>
-            <option value="2">Search Engines</option>
-            <option value="3">Friends or family</option>
-            <option value="4">An advertisement</option>
-            <option value="5">At work or school</option>
+            <option disabled selected>Select One</option>
+            <option>Search engines</option>
+            <option>Social media</option>
+            <option>Family and friends</option>
           </select>
         </fieldset>
-<fieldset>
-  <legend>Please select your membership type</legend>
-  <label for="personal"><input name="membership" value="personal" id="personal" type="radio">Personal</label>
-  <label for="business"><input name="membership" value="business" id="business" type="radio">Business</label>
-</fieldset>
-<fieldset>
-  <legend>What are your favorite methods of communication?</legend>
-  <label for="send-email"><input id="send-email" type="checkbox" name="communication" value="send-email">Email </label>
-  <label for="phone-call"><input type="checkbox" id="phone-call" name="communication" value="phone-call">Phone call</label>
-  <label for="sms">
-  <input type="checkbox" id="sms" name="communication" value="sms">SMS</label>
-</fieldset>
-<fieldset>
-  <legend>Do you have any suggestions for the improvement of our services?</legend>
-  <textarea rows="5" cols="30"></textarea>
-</fieldset>
-        <button id="submit" type="submit">Submit</button>
+        <fieldset>
+          <legend>How much satisfied are you with our service?</legend>
+          <div></div>
+          <input type="radio" name="review" value="5" id="very-satisfied"> <label for="very-satisfied">Very satisfied
+            </div><div>
+            <input type="radio" name="review" value="4" id="slightly-satisfied"> <label for="slightly-satisfied">Slightly satisfied
+              </div><div>
+              <input type="radio" name="review" value="3" id="neutral"> <label for="neutral">Neutral
+                </div><div>
+                <input type="radio" name="review" value="2" id="slightly-dissatisfied"> <label for="slightly-dissatisfied">Slightly dissatisfied
+                  </div><div>
+                  <input type="radio" name="review" value="1" id="very-dissatisfied"> <label for="very-dissatisfied">Very dissatisfied
+                    </div>
+        </fieldset>
+          <fieldset>
+            <legend>Please give us your suggestions for improvement</legend>
+            <textarea id="suggestion" name="suggestion" placeholder="I would suggest that you..." rows="3" cols="30"></textarea>
+            </fieldset>
+        <fieldset>
+          <legend>What are your favorite contact methods</legend>
+          <input type="checkbox" name="contact-method" id="email" value="email">
+          <label for="email" class="contact-label"> Email</label>
+          <input type="checkbox" name="contact-method" id="phone-call" value="phone-call">
+          <label class="contact-label" for="phone-call"> Phone call</label>
+          <input type="checkbox" name="contact-method" id="sms" value="sms">
+          <label for="sms" class="contact-label"> SMS</label>
+        </fieldset>
+        <button type="submit" id="submit">Submit</button
       </form>
     </main>
+    <footer></footer>
   </body>
 </html>
